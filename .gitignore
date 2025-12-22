@@ -1,0 +1,19 @@
+# Node modülleri (Burası en önemlisi, asla yüklenmemeli)
+node_modules/
+
+# Senin özel config dosyan (Şifrelerin vs. olduğu yer)
+config/app.config.js
+
+# Eğer ileride .env kullanırsan diye (Standart)
+.env
+
+# Kullanıcı yüklemeleri (Localdeki test resimleri gitmesin)
+uploads/
+
+# İşletim sistemi gereksiz dosyaları (Mac/Windows)
+.DS_Store
+Thumbs.db
+
+# Hata logları
+npm-debug.log*
+*.log
