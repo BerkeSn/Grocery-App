@@ -1,5 +1,4 @@
 const categoryService = require("../services/categoryService");
-// const upload = ... (Burada upload çağırmana gerek yok, router'da hallettik)
 
 exports.create = (req, res, next) => {
     var path = req.file != undefined ? req.file.path.replace(/\\/g, "/") : "";
@@ -29,10 +28,6 @@ exports.findAll = (req, res, next) => {
         page: req.query.page,
     };
 
-    // DÜZELTİLEN KISIM BURASI:
-    // Eskisi: categoryService.createCategory(...) 
-    // Yenisi: categoryService.getCategories(...) 
-    // (Service dosyasındaki fonksiyonun adı 'getCategories' varsayıyorum)
     categoryService.getCategories(model, (error, results) => {
         if (error) {
             return next(error);
@@ -63,8 +58,6 @@ exports.findOne = (req, res, next) => {
 };
 
 exports.update = (req, res, next) => {
-    // BURAYI DA DÜZELTTİK:
-    // Upload wrapper'ı kaldırdık ve path değişkenini dışarı aldık.
     
     var path = req.file != undefined ? req.file.path.replace(/\\/g, "/") : "";
 
