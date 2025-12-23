@@ -15,7 +15,15 @@ const category = mongoose.model(
             type:String,
             required:false
         }
-    })
+    },
+    {toJSON: {
+        transform: function(doc,ret){
+            ret.categoryId = ret._id.toString();
+            delete ret._id;
+            delete ret._v;
+        }
+    }}
+)
 )
 
 module.exports = {
